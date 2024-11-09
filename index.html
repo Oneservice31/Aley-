@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aley</title>
+
     <style>
         /* Üslublar */
         body {
@@ -62,21 +63,25 @@
     <div class="container">
         <h1><b><i>Aley</i></b></h1>
         <div id="loginSection">
+            <form id="searchForm" onsubmit="return axtaris(event);">
+                <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required>
+                <button type="submit">Axtar</button>
+            </form>
             <h2>Giriş edin</h2>
             <input type="text" id="username" placeholder="İstifadəçi adı" required>
             <input type="password" id="password" placeholder="Şifrə" required>
             <button onclick="login()">Giriş et</button>
             <div id="loginMessage">İstifadəçi adı və ya şifrə yanlışdır!</div>
+            <div id="yandex_rtb_R-A-12790933-1"></div>
         </div>
 
+        <div id="yandex_rtb_R-A-12790933-1"></div>
         <div id="mainContent" style="display: none;">
-            <h2>Proqramlar</h2>
+        <div><form action="">
             <form id="searchForm" onsubmit="return axtaris(event);">
                 <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required>
                 <button type="submit">Axtar</button>
             </form>
-            <div><form action="">
-    
     
                 <center><h1><b><i>'Windows' proqramlar</i></b></h1></center>
            
@@ -105,7 +110,7 @@
         
             <center><h1><i><b>'Android' proqramlar</b></i></h1></center>
             
-            <center><a href="https://drive.google.com/file/d/1dz6IIkNplAN5Mvi-Mgu_GJK-ynJ6WymD/view?usp=sharing"><h1><b><i>Aley Service</i></b></h1></a></center>
+            <center><a href="https://drive.google.com/file/d/1eXypfjIWpEnwpUgXAs-c1SWtjCbqw-3D/view?usp=drive_link"><h1><b><i>Aley Service</i></b></h1></a></center>
             <h1><b><i>Saytımızın proqram versiyasıdır. Prqram viruslu deyildir və rahatca istifadə edə bilərsiz.</i></b></h1>
             <center><h1><b><i>Mahnılar</i></b></h1></center>
             
@@ -194,7 +199,7 @@
                 <p>Salam. Hər hansı bir sayta ehtiyacınız varsa 10 AZN-dən başlayaraq düzəldə bilərik. Qeyd - Hər dəyişiklik üçün proqramlaşdırma dilindən asılı olaraq məbləğə əlavə edilir.</p>
             </div>
         
-            <!-- Bütün digər məzmun buraya əlavə ediləcək -->
+            <!- Bütün digər məzmun buraya əlavə ediləcək ->
         </div>
     </div>
 
@@ -299,6 +304,8 @@
                 open('https://www.google.com/search?q=' + encodeURIComponent(query), '_blank'); 
             }
         }
+        
     </script>
 </body>
 </html>
+
