@@ -1,5 +1,6 @@
-<!Doctype html>
-<html lang="az"><head>
+<!DOCTYPE html>
+<html lang="az">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aley</title>
@@ -63,17 +64,17 @@
         <h1><b><i>Aley</i></b></h1>
         <div id="loginSection">
             <form id="searchForm" onsubmit="return axtaris(event);">
-                <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required="">
+                <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required>
                 <button type="submit">Axtar</button>
             </form>
             <h2>Giriş edin</h2>
-            <input type="text" id="username" placeholder="İstifadəçi adı" required="">
-            <input type="password" id="password" placeholder="Şifrə" required="">
+            <input type="text" id="username" placeholder="İstifadəçi adı" required>
+            <input type="password" id="password" placeholder="Şifrə" required>
             <button onclick="login()">Giriş et</button>
             <div id="loginMessage">İstifadəçi adı və ya şifrə yanlışdır!</div>
             <h2>Qeydiyyat</h2>
-            <input type="text" id="newUsername" placeholder="Yeni istifadəçi adı" required="">
-            <input type="password" id="newPassword" placeholder="Yeni şifrə" required="">
+            <input type="text" id="newUsername" placeholder="Yeni istifadəçi adı" required>
+            <input type="password" id="newPassword" placeholder="Yeni şifrə" required>
             <button onclick="register()">Qeydiyyat et</button>
             <div id="registerMessage" style="color: red; display: none;">Bu istifadəçi adı artıq mövcuddur!</div>
             
@@ -84,14 +85,14 @@
         <div id="yandex_rtb_R-A-12790933-1"></div>
         <div id="mainContent" style="display: none;">
         <div><form action="">
-            
-                <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required="">
+            <form id="searchForm" onsubmit="return axtaris(event);">
+                <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required>
                 <button type="submit">Axtar</button>
             </form>
     
                 <center><h1><b><i>'Windows' proqramlar</i></b></h1></center>
            
-            <a href="https://drive.google.com/file/d/17C_uIxts5Zr6HeZ6-EwyeJM8QUniQv-b/view?usp=drive_link"><center><h1><b><i>Bəhs  oyunu </i></b></h1></center></a>
+            <a href="https://drive.google.com/file/d/17C_uIxts5Zr6HeZ6-EwyeJM8QUniQv-b/view?usp=drive_link"><center><h1><b><i>Bəhs  oyunu </i></b></h1></center></a></a>
             <h1><b><i>Bəhs oyunu aparat və sizin oynadığınız sadə oyundur. Vaxt keçirmək üçün oynaya bilərsiz.</i></b></h1>
             <a href="https://drive.google.com/file/d/1WxQ9DLF8KoL-WDkYmYzQw3yRLpUWRShC/view?usp=drive_link"><center><h1><i><b>Calculator </b></i></h1></center></a>
             <h1><i><b>Kalkulyator dan istifadə zamanı bir az gözdəyin sonra isə soruşulan məlumatları daxil et.</b></i></h1>
@@ -116,7 +117,7 @@
         
             <center><h1><i><b>'Android' proqramlar</b></i></h1></center>
             
-            <center><a href="https://drive.google.com/file/d/1eXypfjIWpEnwpUgXAs-c1SWtjCbqw-3D/view?usp=drive_link"><h1><b><i>Aley Service</i></b></h1></a></center>
+            <center><a href="https://drive.google.com/file/d/1P45Mkg_3sJF2ORCPQGfDIwuqnqj4Nedw/view?usp=sharing"><h1><b><i>Aley Service</i></b></h1></a></center>
             <h1><b><i>Saytımızın proqram versiyasıdır. Prqram viruslu deyildir və rahatca istifadə edə bilərsiz.</i></b></h1>
             <center><h1><b><i>Mahnılar</i></b></h1></center>
             
@@ -125,7 +126,7 @@
             
             <center><a href="https://drive.google.com/file/d/1HpJz6Suq-QY5BwhXL8auB9AXBSmYODGj/view?usp=drive_link"><h1><b><i>Atack 3 - Tunar Rustamli</i></b></h1></a></center>    
         
-            </div>
+            </form></div>
         
         
         
@@ -147,7 +148,7 @@
         
             <div class="container">
                 <h1>Kalkulyator</h1>
-                <input type="text" id="display" disabled="">
+                <input type="text" id="display" disabled>
                 <div>
                     <button onclick="clearDisplay()">C</button>
                     <button onclick="appendToDisplay('1')">1</button>
@@ -183,7 +184,7 @@
             </div>
         
             <div class="container" id="saat">
-                <h1>Saat: <span id="clock">20:15:18</span></h1>
+                <h1>Saat: <span id="clock">00:00:00</span></h1>
             </div>
         
             <div class="container" id="chatbot">
@@ -205,7 +206,7 @@
                 <p>Salam. Hər hansı bir sayta ehtiyacınız varsa 10 AZN-dən başlayaraq düzəldə bilərik. Qeyd - Hər dəyişiklik üçün proqramlaşdırma dilindən asılı olaraq məbləğə əlavə edilir.</p>
             </div>
         
-            <!--- Bütün digər məzmun buraya əlavə ediləcək --->
+            <!- Bütün digər məzmun buraya əlavə ediləcək ->
         </div>
     </div>
 
@@ -358,6 +359,5 @@ function getResponse(userInput) {
         
         
     </script>
-
-
-</body></html>
+</body>
+</html>
