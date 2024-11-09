@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="az">
-<head>
+<!Doctype html>
+<html lang="az"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aley</title>
@@ -64,28 +63,35 @@
         <h1><b><i>Aley</i></b></h1>
         <div id="loginSection">
             <form id="searchForm" onsubmit="return axtaris(event);">
-                <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required>
+                <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required="">
                 <button type="submit">Axtar</button>
             </form>
             <h2>Giriş edin</h2>
-            <input type="text" id="username" placeholder="İstifadəçi adı" required>
-            <input type="password" id="password" placeholder="Şifrə" required>
+            <input type="text" id="username" placeholder="İstifadəçi adı" required="">
+            <input type="password" id="password" placeholder="Şifrə" required="">
             <button onclick="login()">Giriş et</button>
             <div id="loginMessage">İstifadəçi adı və ya şifrə yanlışdır!</div>
+            <h2>Qeydiyyat</h2>
+            <input type="text" id="newUsername" placeholder="Yeni istifadəçi adı" required="">
+            <input type="password" id="newPassword" placeholder="Yeni şifrə" required="">
+            <button onclick="register()">Qeydiyyat et</button>
+            <div id="registerMessage" style="color: red; display: none;">Bu istifadəçi adı artıq mövcuddur!</div>
+            
             <div id="yandex_rtb_R-A-12790933-1"></div>
         </div>
+
 
         <div id="yandex_rtb_R-A-12790933-1"></div>
         <div id="mainContent" style="display: none;">
         <div><form action="">
-            <form id="searchForm" onsubmit="return axtaris(event);">
-                <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required>
+            
+                <input type="text" id="searchInput" placeholder="Webdə axtarış edin" required="">
                 <button type="submit">Axtar</button>
             </form>
     
                 <center><h1><b><i>'Windows' proqramlar</i></b></h1></center>
            
-            <a href="https://drive.google.com/file/d/17C_uIxts5Zr6HeZ6-EwyeJM8QUniQv-b/view?usp=drive_link"><center><h1><b><i>Bəhs  oyunu </i></b></h1></center></a></a>
+            <a href="https://drive.google.com/file/d/17C_uIxts5Zr6HeZ6-EwyeJM8QUniQv-b/view?usp=drive_link"><center><h1><b><i>Bəhs  oyunu </i></b></h1></center></a>
             <h1><b><i>Bəhs oyunu aparat və sizin oynadığınız sadə oyundur. Vaxt keçirmək üçün oynaya bilərsiz.</i></b></h1>
             <a href="https://drive.google.com/file/d/1WxQ9DLF8KoL-WDkYmYzQw3yRLpUWRShC/view?usp=drive_link"><center><h1><i><b>Calculator </b></i></h1></center></a>
             <h1><i><b>Kalkulyator dan istifadə zamanı bir az gözdəyin sonra isə soruşulan məlumatları daxil et.</b></i></h1>
@@ -119,7 +125,7 @@
             
             <center><a href="https://drive.google.com/file/d/1HpJz6Suq-QY5BwhXL8auB9AXBSmYODGj/view?usp=drive_link"><h1><b><i>Atack 3 - Tunar Rustamli</i></b></h1></a></center>    
         
-            </form></div>
+            </div>
         
         
         
@@ -141,7 +147,7 @@
         
             <div class="container">
                 <h1>Kalkulyator</h1>
-                <input type="text" id="display" disabled>
+                <input type="text" id="display" disabled="">
                 <div>
                     <button onclick="clearDisplay()">C</button>
                     <button onclick="appendToDisplay('1')">1</button>
@@ -177,7 +183,7 @@
             </div>
         
             <div class="container" id="saat">
-                <h1>Saat: <span id="clock">00:00:00</span></h1>
+                <h1>Saat: <span id="clock">20:15:18</span></h1>
             </div>
         
             <div class="container" id="chatbot">
@@ -199,7 +205,7 @@
                 <p>Salam. Hər hansı bir sayta ehtiyacınız varsa 10 AZN-dən başlayaraq düzəldə bilərik. Qeyd - Hər dəyişiklik üçün proqramlaşdırma dilindən asılı olaraq məbləğə əlavə edilir.</p>
             </div>
         
-            <!- Bütün digər məzmun buraya əlavə ediləcək ->
+            <!--- Bütün digər məzmun buraya əlavə ediləcək --->
         </div>
     </div>
 
@@ -207,105 +213,151 @@
         const users = [
         { username: "punhanrzazade5@gmail.com", password: "1220" },
         { username: "mehemmedjavziyev@gmail.com", password: "Mehemmed12" },
-        { username: "Tunar", password: "Rustamli!!!!" }
+        { username: "Tunar", password: "Rustamli!!!!" },
+        
+        
     ];
 
-    function login() {
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+    function register() {
+    const newUsername = document.getElementById('newUsername').value;
+    const newPassword = document.getElementById('newPassword').value;
 
-        const user = users.find(u => u.username === username && u.password === password);
-        
-        if (user) { // Düzgün giriş
-            document.getElementById('loginSection').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
-        } else {
-            document.getElementById('loginMessage').style.display = 'block'; // Yanlış giriş
-        }
+    // Gmail, Yandex, və iCloud üçün uyğun olan regex patternləri
+    const emailPattern = /^(?:[a-zA-Z0-9._%+-]+@(gmail\.com|yandex\.com|icloud\.com))$/;
+
+    // Gmail, Yandex, və iCloud email yoxlaması
+    if (!emailPattern.test(newUsername)) {
+        alert("Zəhmət olmasa, yalnız Gmail, Yandex və ya iCloud ünvanlarından birini daxil edin!");
+        return;
     }
 
-        function axtaris(event) {
-            event.preventDefault(); // Prevent the default form submission
-            const query = document.getElementById('searchInput').value; // Get the input value
-            if (query) {
-                open('https://www.google.com/search?q=' + encodeURIComponent(query), '_blank'); // Open a new tab with the search
-            }
-        }
+    // Yoxlayırıq ki, istifadəçi adı artıq mövcuddurmu
+    const existingUser = localStorage.getItem(newUsername);
 
-        // Faiz Hesablama
-        function calculatePercentage() {
-            const number = parseFloat(document.getElementById('numberInput').value);
-            const percent = parseFloat(document.getElementById('percentInput').value);
-            document.getElementById('result').innerText = isNaN(number) || isNaN(percent)
-                ? 'Xahiş edirəm, düzgün ədədlər daxil edin.'
-                : `Nəticə: ${(number * percent) / 100}`;
-        }
-
-        // Kalkulyator
-        function clearDisplay() { document.getElementById("display").value = ""; }
-        function appendToDisplay(value) { document.getElementById("display").value += value; }
-        function calculateResult() {
-            try { document.getElementById("display").value = eval(document.getElementById("display").value); }
-            catch { document.getElementById("display").value = "Error"; }
-        }
-
-        // To-Do List
-        function addTodo() {
-            const todoText = document.getElementById("todoInput").value.trim();
-            if (todoText) {
-                const li = document.createElement("li");
-                li.textContent = todoText;
-                document.getElementById("todoList").appendChild(li);
-                document.getElementById("todoInput").value = "";
-            }
-        }
-
-        // Saat
-        function updateClock() {
-            const now = new Date();
-            document.getElementById('clock').textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Chatbot Cavabları
-        const jokes = [
-            "Niyə kompüter heç vaxt aclıq çəkmir? Çünki həmişə prosessoru var!", 
-            "Niyə kitabxanaçılar zarafat etmir? Hər kəs sakit olmalıdır!",
-            "İki telefon danışır: 'Sənin səsin gəlmir, zəng vur!'"
-        ];
-
-        function getResponse(userInput) {
-            const now = new Date();
-            const hour = now.getHours();
-            let response = "Bağışlayın, sualınıza cavab tapa bilmirəm.";
-
-            if (userInput.includes("saat")) {
-                response = `Saat: ${hour}:${String(now.getMinutes()).padStart(2, '0')}`;
-            } else if (userInput.includes("salam")) {
-                response = "Salam! Necəsiniz?";
-            } else if (userInput.includes("necəsən")) {
-                response = "Yaxşıyam, siz necəsiniz?";
-            } else if (userInput.includes("hava")) {
-                response = "Bugünkü hava gözəl!";
-            } else if (userInput.includes("təşəkkür")) {
-                response = "Rica edirəm!";
-            } else if (userInput.includes("zarafat et")) {
-                response = jokes[Math.floor(Math.random() * jokes.length)];
-            }
-            document.getElementById("response").innerText = "Cavab: " + response;
-        }
+    if (existingUser) {
+        // İstifadəçi adı artıq mövcuddur
+        document.getElementById('registerMessage').style.display = 'block';
+    } else {
+        // Yeni istifadəçi adı və şifrəni localStorage-a əlavə edirik
+        localStorage.setItem(newUsername, newPassword);
+        document.getElementById('registerMessage').style.display = 'none';
+        alert('Qeydiyyat uğurla tamamlandı!.Giriş edin yerindən istifadəçi adını və şifrəni daxil edin!');
+    }
+}
 
 
-        function axtaris(event) {
-            event.preventDefault(); 
-            const query = document.getElementById('searchInput').value; 
-            if (query) {
-                open('https://yandex.com/search/?text=' + encodeURIComponent(query), '_blank'); 
-            }
-        }
+
+// Giriş funksiyası
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Gmail, Yandex, və iCloud üçün uyğun olan regex patternləri
+    const emailPattern = /^(?:[a-zA-Z0-9._%+-]+@(gmail\.com|yandex\.com|icloud\.com))$/;
+
+    // Daxil edilmiş istifadəçi adı düzgün mail xidmətindən olmalıdır
+    if (!emailPattern.test(username)) {
+        document.getElementById('loginMessage').style.display = 'block'; // Yanlış mail xidmətindən istifadə
+        return;
+    }
+
+    const user = localStorage.getItem(username);
+
+    if (user && user === password) {
+        // Düzgün giriş
+        document.getElementById('loginSection').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+    } else {
+        // Yanlış istifadəçi adı və ya şifrə
+        document.getElementById('loginMessage').style.display = 'block';
+    }
+}
+
+// Axtarış funksiyası (Google və Yandex)
+function axtaris(event) {
+    event.preventDefault(); // Formun standart göndərilməsini bloklayırıq
+    const query = document.getElementById('searchInput').value; // Axtarış sorğusunu alırıq
+    if (query) {
+        open('https://yandex.com/search/?text=' + encodeURIComponent(query), '_blank'); // Yandex-ə axtarış
+    }
+}
+
+// Faiz Hesablama funksiyası
+function calculatePercentage() {
+    const number = parseFloat(document.getElementById('numberInput').value);
+    const percent = parseFloat(document.getElementById('percentInput').value);
+    document.getElementById('result').innerText = isNaN(number) || isNaN(percent)
+        ? 'Xahiş edirəm, düzgün ədədlər daxil edin.'
+        : `Nəticə: ${(number * percent) / 100}`;
+}
+
+// Kalkulyator funksiyaları
+function clearDisplay() { 
+    document.getElementById("display").value = ""; 
+}
+
+function appendToDisplay(value) { 
+    document.getElementById("display").value += value; 
+}
+
+function calculateResult() {
+    try {
+        document.getElementById("display").value = eval(document.getElementById("display").value);
+    } catch {
+        document.getElementById("display").value = "Error";
+    }
+}
+
+// To-Do List funksiyası
+function addTodo() {
+    const todoText = document.getElementById("todoInput").value.trim();
+    if (todoText) {
+        const li = document.createElement("li");
+        li.textContent = todoText;
+        document.getElementById("todoList").appendChild(li);
+        document.getElementById("todoInput").value = "";
+    }
+}
+
+// Saat funksiyası
+function updateClock() {
+    const now = new Date();
+    document.getElementById('clock').textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+}
+
+setInterval(updateClock, 1000); // Saatı hər saniyə yeniləyirik
+updateClock();
+
+// Chatbot funksiyası
+const jokes = [
+    "Niyə kompüter heç vaxt aclıq çəkmir? Çünki həmişə prosessoru var!",
+    "Niyə kitabxanaçılar zarafat etmir? Hər kəs sakit olmalıdır!",
+    "İki telefon danışır: 'Sənin səsin gəlmir, zəng vur!'"
+];
+
+function getResponse(userInput) {
+    const now = new Date();
+    const hour = now.getHours();
+    let response = "Bağışlayın, sualınıza cavab tapa bilmirəm.";
+
+    if (userInput.includes("saat")) {
+        response = `Saat: ${hour}:${String(now.getMinutes()).padStart(2, '0')}`;
+    } else if (userInput.includes("salam")) {
+        response = "Salam! Necəsiniz?";
+    } else if (userInput.includes("necəsən")) {
+        response = "Yaxşıyam, siz necəsiniz?";
+    } else if (userInput.includes("hava")) {
+        response = "Bugünkü hava gözəl!";
+    } else if (userInput.includes("təşəkkür")) {
+        response = "Rica edirəm!";
+    } else if (userInput.includes("zarafat et")) {
+        response = jokes[Math.floor(Math.random() * jokes.length)];
+    }
+    document.getElementById("response").innerText = "Cavab: " + response;
+}
+        
         
     </script>
-</body>
-</html>
 
+
+</body></html>
